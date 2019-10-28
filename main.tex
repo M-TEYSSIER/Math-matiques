@@ -2,14 +2,46 @@
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{tikz}
 
 \begin{document}
-
 \date{}
-
 \maketitle
-\thispagestyle{empty}
+
 \begin{center}
+    \fbox{Cercle trigo}\\ 
+    \vspace{0.3cm}
+    \begin{tikzpicture}
+        \draw (0,0) circle (1);
+        \draw (0,1.2) node{\textbf{Sin}};
+        \draw (0,-1) -- (0,1); % Vertical
+        \draw (1.4,0) node{\textbf{Cos}};
+        \draw (-1,0) -- (1,0); % Horizontal
+        
+        \draw (0,1.7) node{($\frac{\pi}{2}$)};
+        \draw (-1.5,0) node{($\pi$)};
+        \draw (0,-1.5) node{($\frac{3\pi}{2}$)};
+        \draw (2,0) node{(0)};
+        
+        \draw[<-] (1.4, 0.2) arc (0:90:0.90); % Dérive
+        \draw (1.4,1.1) node{\textbf{D}};
+        \draw[->] (0.5,-1.2) arc (-90:0:0.90); % Intergale
+        \draw (1.4,-1.1) node{\textbf{I}};
+    \end{tikzpicture}\\
+\end{center}
+
+\begin{tabular}{cc}
+    \fbox{\textbf{Sinus}}\\
+    \begin{tikzpicture} 
+        \draw[->] (0,0) -- (0,2);
+        \draw[->] (0,0) -- (2,0);
+    \end{tikzpicture}&  \\
+\end{tabular}
+
+
+\newpage
+\begin{center}
+    \textit{Dérivées}\\
     \begin{tabular}{|c|c|c|}
         \hline
         Fonction & Domaine de dérivabilités & Dériviée\\
@@ -22,7 +54,7 @@
         \hline
         $\sqrt{x}$ & $\mathbb{R}^{+,*}$	&  $\frac{1}{2\sqrt{x}}$ \\ 
         \hline
-        $\sqrt{x^\alpha , \alpha \in \mathbb{R}^{+,*}}$ & $\mathbb{R}^{+,*}$	&  $ \alpha x^{\alpha - 1} $ \\ 
+        $\sqrt{x^\alpha}, \alpha \in \mathbb{R}^{+,*}$ & $\mathbb{R}^{+,*}$	&  $ \alpha x^{\alpha - 1} $ \\ 
         \hline
         $ \cos{x} $ & $\mathbb{R}$	&  $ -\sin{x} $ \\ 
         \hline
@@ -36,6 +68,9 @@
         \hline
     \end{tabular}
 \end{center}
+
+\thispagestyle{empty}
+
 \begin{center}
     \begin{tabular}{|c|c|}
     \hline
@@ -65,8 +100,9 @@
     \hline
     \end{tabular}
 \end{center}
-
+\newpage
 \begin{center}
+    \textit{Primitives}\\
     \begin{tabular}{|c|c|c|}
     \hline
     Fonction& Intervalle d'intégration & Primitive \\
@@ -144,5 +180,6 @@
     \end{tabular}
 \end{center}
 \thispagestyle{empty}
+
 
 \end{document}
