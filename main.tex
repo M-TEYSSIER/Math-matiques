@@ -4,42 +4,11 @@
 \usepackage{amssymb}
 \usepackage{tikz}
 
+\usepackage{pgfplots}
+
+
 \begin{document}
-\date{}
-\maketitle
-
-\begin{center}
-    \fbox{Cercle trigo}\\ 
-    \vspace{0.3cm}
-    \begin{tikzpicture}
-        \draw (0,0) circle (1);
-        \draw (0,1.2) node{\textbf{Sin}};
-        \draw (0,-1) -- (0,1); % Vertical
-        \draw (1.4,0) node{\textbf{Cos}};
-        \draw (-1,0) -- (1,0); % Horizontal
-        
-        \draw (0,1.7) node{($\frac{\pi}{2}$)};
-        \draw (-1.5,0) node{($\pi$)};
-        \draw (0,-1.5) node{($\frac{3\pi}{2}$)};
-        \draw (2,0) node{(0)};
-        
-        \draw[<-] (1.4, 0.2) arc (0:90:0.90); % Dérive
-        \draw (1.4,1.1) node{\textbf{D}};
-        \draw[->] (0.5,-1.2) arc (-90:0:0.90); % Intergale
-        \draw (1.4,-1.1) node{\textbf{I}};
-    \end{tikzpicture}\\
-\end{center}
-
-\begin{tabular}{cc}
-    \fbox{\textbf{Sinus}}\\
-    \begin{tikzpicture} 
-        \draw[->] (0,0) -- (0,2);
-        \draw[->] (0,0) -- (2,0);
-    \end{tikzpicture}&  \\
-\end{tabular}
-
-
-\newpage
+ 
 \begin{center}
     \textit{Dérivées}\\
     \begin{tabular}{|c|c|c|}
@@ -68,7 +37,27 @@
         \hline
     \end{tabular}
 \end{center}
-
+\begin{center}
+    \fbox{Cercle trigo}\\ 
+    \vspace{0.3cm}
+    \begin{tikzpicture}
+        \draw (0,0) circle (1);
+        \draw (0,1.2) node{\textbf{Sin}};
+        \draw (0,-1) -- (0,1); % Vertical
+        \draw (1.4,0) node{\textbf{Cos}};
+        \draw (-1,0) -- (1,0); % Horizontal
+        
+        \draw (0,1.7) node{($\frac{\pi}{2}$)};
+        \draw (-1.5,0) node{($\pi$)};
+        \draw (0,-1.5) node{($\frac{3\pi}{2}$)};
+        \draw (2,0) node{(0)};
+        
+        \draw[<-] (1.4, 0.2) arc (0:90:0.90); % Dérive
+        \draw (1.4,1.1) node{\textbf{D}};
+        \draw[->] (0.5,-1.2) arc (-90:0:0.90); % Intergale
+        \draw (1.4,-1.1) node{\textbf{I}};
+    \end{tikzpicture}\\
+\end{center}
 \thispagestyle{empty}
 
 \begin{center}
@@ -180,6 +169,97 @@
     \end{tabular}
 \end{center}
 \thispagestyle{empty}
+\newpage
+
+
+\begin{center}
+%%%%%% SIN / ARCSIN %%%%%%
+    \fbox{\textbf{Sinus}}\vspace{0.2cm}
+    \begin{tikzpicture}
+        \begin{axis}[
+            grid=both,
+            samples=200,
+            domain=-2*pi:2*pi,
+            no marks,
+            xticklabels={-2$\pi$,-1.5$\pi$,...$\pi$,2$\pi$},
+            x post scale=1.5
+            ]
+            \addplot {sin(deg(x))};\\
+        \end{axis}
+    \end{tikzpicture}
+    \vspace{1cm}\\
+    \fbox{\textbf{ArcSinus}}\\ \vspace{0.2cm}
+    \begin{tikzpicture}
+        \begin{axis}[grid=both,samples=200,domain=-1:1,no marks, x post scale=1.5]
+            \addplot {asin(x)};
+        \end{axis}
+    \end{tikzpicture}\\
+    
+    \newpage
+%%%%% COS / ARCCOS
+    \fbox{\textbf{Cosinus}}\vspace{0.2}
+    \begin{tikzpicture}
+        \begin{axis}[
+            grid=both,
+            samples=200,
+            domain=-2*pi:2*pi,
+            no marks,
+            xticklabels={-2$\pi$,-1.5$\pi$,...$\pi$,2$\pi$},
+            x post scale=1.5
+            ]
+            \addplot {cos(deg(x))};
+        \end{axis}
+    \end{tikzpicture}\\
+    \vspace{1cm}\\
+    \fbox{\textbf{ArcCosinus}}\\ \vspace{0.2cm}
+    \begin{tikzpicture}
+        \begin{axis}[grid=both,samples=200,domain=-1:1,no marks, x post scale=1.5]
+            \addplot {acos(x)};
+        \end{axis}
+    \end{tikzpicture}\\
+    
+    \newpage
+%%%%% TAN / ARCTAN
+    
+     \fbox{\textbf{Tangente}}\vspace{0.2}
+    \begin{tikzpicture}
+        \begin{axis}[
+            grid=both,
+            samples=200,
+            domain=-2*pi:2*pi,
+            no marks,
+            xticklabels={-2$\pi$,-1.5$\pi$,...$\pi$,2$\pi$},
+            x post scale=1.5
+            ]
+            \addplot {tan(deg(x))};
+        \end{axis}
+    \end{tikzpicture}
+    \vspace{1cm}\\
+    \fbox{\textbf{Arctangente}}\vspace{0.2}
+    \begin{tikzpicture}
+        \begin{axis}[
+            grid=both,
+            samples=200,
+            domain=-2*pi:2*pi,
+            no marks,
+            xticklabels={-2$\pi$,-1.5$\pi$,...$\pi$,2$\pi$},
+            x post scale=1.5
+            ]
+            \addplot {atan(x)};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\newpage
+
+\begin{center}
+    \fbox{TEST}
+    \begin{tikzpicture}
+        \begin{axis}[grid=both,samples=200,domain=-1:1,no marks, x post scale=1.5]
+            \addplot {acos(x)};
+        \end{axis}
+    \end{tikzpicture}\\
+\end{center}
 
 
 \end{document}
