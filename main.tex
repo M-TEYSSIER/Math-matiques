@@ -1,44 +1,13 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{tikz}
-
-\usepackage{pgfplots}
-
+\usepackage{amsmath} % Fonctions Mathématiques (Général)
+\usepackage{amssymb} % Fonctions Mathématiques (Symboles)
+\usepackage{tikz} % Dessiner
+\usepackage{pgfplots} % Dessiner des fonctions
 
 \begin{document}
- 
-\begin{center}
-    \textit{Dérivées}\\
-    \begin{tabular}{|c|c|c|}
-        \hline
-        Fonction & Domaine de dérivabilités & Dériviée\\
-        \hline
-        ln(x) & $\mathbb{R}^{+,*}$	&  $\frac{1}{x}$ \\ 
-        \hline
-        $e^x$ & $\mathbb{R}$	&  $e^x$ \\ 
-        \hline
-        $\frac{1}{x}$ & $\mathbb{R}^*$	&  $-\frac{1}{x^2}$ \\ 
-        \hline
-        $\sqrt{x}$ & $\mathbb{R}^{+,*}$	&  $\frac{1}{2\sqrt{x}}$ \\ 
-        \hline
-        $\sqrt{x^\alpha}, \alpha \in \mathbb{R}^{+,*}$ & $\mathbb{R}^{+,*}$	&  $ \alpha x^{\alpha - 1} $ \\ 
-        \hline
-        $ \cos{x} $ & $\mathbb{R}$	&  $ -\sin{x} $ \\ 
-        \hline
-        $ \tan{x} $ & $ ] -\frac{\pi}{2} + k\pi ; \frac{\pi}{2} +k\pi [, k\in\mathbb{Z} $ & $ 1+\tan{x}^2 = \frac{1}{cos{x}^2} $\\
-        \hline
-        \arccos{x} & ]-1;1[ & $-\frac{1}{\sqrt{1-x^2}}$ \\
-        \hline
-        \arcsin{x} & ]-1;1[ & $\frac{1}{\sqrt{1-x^2}}$ \\
-        \hline
-        \arctan{x} & $\mathbb{R}$ & $\frac{1}{\sqrt{1-x^2}}$ \\
-        \hline
-    \end{tabular}
-\end{center}
-\begin{center}
-    \fbox{Cercle trigo}\\ 
+ \begin{center}
+    \section*{\fbox{Cercle trigo}}\\ 
     \vspace{0.3cm}
     \begin{tikzpicture}
         \draw (0,0) circle (1);
@@ -58,6 +27,36 @@
         \draw (1.4,-1.1) node{\textbf{I}};
     \end{tikzpicture}\\
 \end{center}
+
+\begin{center}
+    \section*{\fbox{Dérivées}}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Fonction & Domaine de dérivabilités & Dériviée\\
+        \hline
+        ln(x) & $\mathbb{R}^{+,*}$	&  $\frac{1}{x}$ \\ 
+        \hline
+        $e^x$ & $\mathbb{R}$	&  $e^x$ \\ 
+        \hline
+        $\frac{1}{x}$ & $\mathbb{R}^*$	&  $-\frac{1}{x^2}$ \\ 
+        \hline
+        $\sqrt{x}$ & $\mathbb{R}^{+,*}$	&  $\frac{1}{2\sqrt{x}}$ \\ 
+        \hline
+        $\sqrt{x^\alpha}, \alpha \in \mathbb{R}^{+,*}$ & $\mathbb{R}^{+,*}$	&  $ \alpha x^{\alpha - 1} $ \\ 
+        \hline
+        $ \cos{x} $ & $\mathbb{R}$	&  $ -\sin{x} $ \\ 
+        \hline
+        $ \tan{x} $ & $ ] -\frac{\pi}{2} + k\pi ; \frac{\pi}{2} +k\pi [, k\in\mathbb{Z} $ & $ 1+\tan{(x)}^2 = \frac{1}{cos{(x)}^2} $\\
+        \hline
+        \arccos{x} & ]-1;1[ & $-\frac{1}{\sqrt{1-x^2}}$ \\
+        \hline
+        \arcsin{x} & ]-1;1[ & $\frac{1}{\sqrt{1-x^2}}$ \\
+        \hline
+        \arctan{x} & $\mathbb{R}$ & $\frac{1}{\sqrt{1-x^2}}$ \\
+        \hline
+    \end{tabular}
+\end{center}
+
 \thispagestyle{empty}
 
 \begin{center}
@@ -71,7 +70,7 @@
     \hline
     $\frac{f}{g}$ & $\frac{f'g - fg'}{g^2}$ \\
     \hline 
-    $g \circ g$ & $f'g' \circ f$\\
+    $g \circ f$ & $f'g' \circ f$\\
     \hline
     $\frac{1}{u}$ & $-\frac{u'}{u^2}$ \\
     \hline
@@ -83,15 +82,19 @@
     \hline
     $\ln{u}$ & $\frac{u'}{u}$ \\
     \hline
-    $ \sin{u} $ & $u'\sin{u}$ \\
+    $ \sin{u} $ & $u'\cos{u}$ \\
     \hline
     \cos{u} & $-u'\sin{u}$\\
     \hline
+    \tan{x} & $1+\tan{(x)}^2$ ou $ \frac{1}{\cos{(x)}^2} $\\
+    \hline
     \end{tabular}
 \end{center}
+
 \newpage
+
 \begin{center}
-    \textit{Primitives}\\
+    \section*{\fbox{Primitives}}
     \begin{tabular}{|c|c|c|}
     \hline
     Fonction& Intervalle d'intégration & Primitive \\
